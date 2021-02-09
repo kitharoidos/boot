@@ -72,10 +72,6 @@ $(baseuber): boot/base/pom.xml $(shell find boot/base/src/main)
 
 .installed: mkdirs $(basejar) $(alljars)
 	cp $(baseuber) $(distjar)
-	# FIXME: this is just for testing -- remove before release
-	mkdir -p $$HOME/.boot/cache/bin/$(version)
-	cp $(baseuber) $$HOME/.boot/cache/bin/$(version)/boot.jar
-	# End testing code -- cut above.
 	date > .installed
 
 install: .installed
